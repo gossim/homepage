@@ -12,6 +12,7 @@
 <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/submit-callback.js"></script>
 
 <link rel="stylesheet" type="text/css" href="jvmobilemenu/jv-jquery-mobile-menu.css">
 <link rel="stylesheet" href="css/style.css">
@@ -203,12 +204,14 @@
 <section class="contact_us c2" id="goThe04">
     <div class="ContentsBox clearfix">
         <h3 class="main_title s-animation-page-slide_in">Contact Us</h3>
-        <p class="sub_title">Make sure to add links to the icons!</p>
-        <form>
-            <input type="text" name="" placeholder="您的稱呼">
-            <input type="text" name="" placeholder="聯絡電話">
-            <textarea type="text" placeholder="備註"></textarea>
-            <p class="btn"><a href="#">送出</a></p>
+        <p class="sub_title">Leave any suggestions or proposals here!</p>
+        <form action="https://formspree.io/motephyr@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="您的稱呼">
+            <input type="email" name="_replyto" placeholder="您的Email">
+            <textarea type="text" name="message" placeholder="內容或想法"></textarea>
+            <input type="hidden" name="_next" value="https://www.gossim.io/#message-received" />
+            <input type="hidden" name="_cc" value="miecowbai@email.com" />
+            <p class="btn"><a onclick="$(this).parents('form').submit();">送出</a></p>
         </form>
     </div>
 </section>
